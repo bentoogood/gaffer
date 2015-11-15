@@ -20,4 +20,5 @@ v = scriptWindow.getLayout().editors(GafferUI.Viewer)[0]
 v.getNodeSet().add(script['Grade'])
 
 # do a render
-script['RenderManRender'].execute( [script.context()] )
+with script.context() :
+    script['AppleseedRender'].execute()
